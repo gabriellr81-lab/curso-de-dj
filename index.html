@@ -234,31 +234,9 @@ async function prepareEnrollment(event) {
     return false;
   }
 
-  if (paymentBox) {
-    paymentBox.style.display = "block";
-
-    const strong = paymentBox.querySelector("strong");
-    const paragraphs = paymentBox.querySelectorAll("p");
-
-    if (strong) strong.textContent = "¡Inscripción recibida!";
-    if (paragraphs[0]) {
-      paragraphs[0].textContent =
-        "Tus datos quedaron registrados. Ahora podés realizar el pago de $9.000 UYU para reservar tu lugar.";
-    }
-    if (paragraphs[paragraphs.length - 1]) {
-      paragraphs[paragraphs.length - 1].textContent =
-        "Podés pagar con tarjeta y hasta en 12 cuotas, según las condiciones disponibles de Mercado Pago.";
-    }
-
-    if (paymentButton) {
-      paymentButton.href = MERCADO_PAGO_URL;
-      paymentButton.target = "_blank";
-      paymentButton.rel = "noopener";
-      paymentButton.textContent = "Pagar $9.000 con Mercado Pago";
-    }
-
-    paymentBox.scrollIntoView({ behavior: "smooth", block: "center" });
-  }
+  // Once the registration is safely stored, go directly to the fixed Mercado Pago link.
+  window.location.href = MERCADO_PAGO_URL;
+  return false;
 
   if (button) {
     button.textContent = "Inscripción guardada ✓";
