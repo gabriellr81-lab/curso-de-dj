@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Curso de DJ | Música Electrónica</title>
@@ -55,6 +56,7 @@ footer{padding:35px 0;color:#777;font-size:13px}
 }
 @media(max-width:520px){.grid,.numbers{grid-template-columns:1fr}h1{letter-spacing:-2px}.hero p{font-size:17px}}
 </style>
+<style>.legacy-extra-field{display:none!important}</style>
 </head>
 <body>
 <nav><div class="container navin">
@@ -137,86 +139,18 @@ footer{padding:35px 0;color:#777;font-size:13px}
 <div class="cta">
 <div class="eyebrow">Inscripción</div>
 <h2>Reservá tu lugar por $9.000 UYU.</h2>
-<p>Para inscribirte, completá tus datos y luego realizá el pago del curso. Una vez confirmado el pago, coordinamos tu horario y grupo.</p><p style="font-weight:600;color:#333;margin-top:10px">Podés pagar con cualquier tarjeta hasta en 12 cuotas sin intereses.</p>
+<p>Completá tus datos personales y luego realizá el pago para reservar tu lugar.</p>
 
-<form id="enrollmentForm" style="margin-top:28px;display:grid;gap:14px;max-width:760px" onsubmit="return prepareEnrollment(event)">
+<form id="enrollmentForm" style="margin-top:28px;display:grid;gap:14px;max-width:760px" onsubmit="return goToPayment(event)">
 <input required name="nombre" placeholder="Nombre y apellido" style="padding:15px;border:1px solid #ccc;border-radius:7px;font:inherit">
 <input required name="edad" type="number" min="10" placeholder="Edad" style="padding:15px;border:1px solid #ccc;border-radius:7px;font:inherit">
 <input required name="telefono" placeholder="Número de teléfono / WhatsApp" style="padding:15px;border:1px solid #ccc;border-radius:7px;font:inherit">
 <input required name="email" type="email" placeholder="Correo electrónico" style="padding:15px;border:1px solid #ccc;border-radius:7px;font:inherit">
 
-<select required name="nivel" style="padding:15px;border:1px solid #ccc;border-radius:7px;font:inherit;background:#fff">
-<option value="">Nivel actual como DJ</option>
-<option>Nunca utilicé un equipo de DJ</option>
-<option>Soy principiante y tengo algunos conocimientos</option>
-<option>Practico por mi cuenta</option>
-<option>Ya realizo algunas mezclas y quiero mejorar</option>
-<option>Tengo experiencia como DJ</option>
-</select>
-
-<select required name="equipo" style="padding:15px;border:1px solid #ccc;border-radius:7px;font:inherit;background:#fff">
-<option value="">¿Tenés equipo de DJ?</option>
-<option>No tengo equipo</option>
-<option>Tengo un controlador DJ</option>
-<option>Tengo CDJ y mixer</option>
-<option>Tengo otro tipo de equipo</option>
-</select>
-
-<input name="software" placeholder="¿Qué equipo o software utilizás actualmente? (opcional)" style="padding:15px;border:1px solid #ccc;border-radius:7px;font:inherit">
-
-<textarea required name="objetivo" rows="3" placeholder="¿Cuál es tu principal objetivo al realizar el curso?" style="padding:15px;border:1px solid #ccc;border-radius:7px;font:inherit"></textarea>
-
-<select required name="experienciaElectronica" style="padding:15px;border:1px solid #ccc;border-radius:7px;font:inherit;background:#fff">
-<option value="">¿Tenés experiencia previa con música electrónica?</option>
-<option>No</option>
-<option>Escucho música electrónica pero nunca la mezclé</option>
-<option>He intentado realizar algunas mezclas</option>
-<option>Practico habitualmente</option>
-<option>Ya realizo DJ sets</option>
-</select>
-
-<div style="padding:18px;border:1px solid #ccc;border-radius:7px;background:#f7f7f7;color:#333">
-<strong style="display:block;margin-bottom:5px">Horario del curso</strong>
-Sábados al mediodía.
-</div>
-<textarea required name="expectativa" rows="3" placeholder="¿Qué te gustaría poder hacer al finalizar el curso?" style="padding:15px;border:1px solid #ccc;border-radius:7px;font:inherit"></textarea>
-
-<select required name="comoConocio" style="padding:15px;border:1px solid #ccc;border-radius:7px;font:inherit;background:#fff">
-<option value="">¿Cómo conociste el curso?</option>
-<option>Instagram</option>
-<option>TikTok</option>
-<option>WhatsApp</option>
-<option>Recomendación</option>
-<option>Otro</option>
-</select>
-
-<textarea name="consulta" rows="3" placeholder="¿Hay algo que quieras consultar o contarnos? (opcional)" style="padding:15px;border:1px solid #ccc;border-radius:7px;font:inherit"></textarea>
-
-<select required name="situacion" style="padding:15px;border:1px solid #ccc;border-radius:7px;font:inherit;background:#fff">
-<option value="">¿Cuál es tu situación actualmente?</option>
-<option>Quiero comenzar el curso</option>
-<option>Estoy interesado/a y quiero recibir más información</option>
-<option>Quiero consultar los horarios disponibles</option>
-<option>Todavía estoy evaluando la posibilidad</option>
-</select>
-
-<select required name="confirmacion" style="padding:15px;border:1px solid #ccc;border-radius:7px;font:inherit;background:#fff">
-<option value="">Disponibilidad para realizar 8 clases</option>
-<option>Sí, confirmo</option>
-<option>Necesito consultar mi disponibilidad</option>
-</select>
-
-<button class="btn" type="submit" style="cursor:pointer">Enviar inscripción</button>
+<button class="btn" type="submit" style="cursor:pointer">Continuar al pago</button>
 </form>
 
-<div id="paymentBox" style="display:none;margin-top:24px;padding:24px;background:#e9e9e9;border-radius:10px">
-<strong style="display:block;font-size:18px">Datos recibidos correctamente.</strong>
-<p style="color:#555;margin:8px 0 18px">El siguiente paso es realizar el pago de $9.000 UYU para reservar tu lugar.</p>
-<a class="btn" href="https://www.mercadopago.com.uy/" target="_blank">Pagar con Mercado Pago</a>
-<p style="font-size:12px;color:#777;margin-top:12px">El pago se procesa de forma segura mediante Mercado Pago.</p>
-</div>
-
-<p style="font-size:12px;color:#777;margin-top:16px">Tus datos se almacenan de forma segura en nuestro sistema de inscripción. El pago se realiza a continuación mediante Mercado Pago.</p>
+<p style="font-size:12px;color:#777;margin-top:16px">Después de completar tus datos, serás dirigido directamente a Mercado Pago para realizar el pago de $9.000 UYU.</p>
 </div>
 </div></section>
 
@@ -256,94 +190,87 @@ Sábados al mediodía.
 </style>
 
 <footer><div class="container">Curso de DJ · Música electrónica · Montevideo</div></footer>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
 const SUPABASE_URL = "https://akdyhrevykvmrqnzxvht.supabase.co";
 const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFrZHlocmV2eWt2bXJxbnp4dmh0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODcyNTk2MTUsImV4cCI6MjEwMjgzNTYxNX0.hyhnGdXwE27-ys0UbL8OHMVvmHjfp1HJ5A0-EFhy8lI";
 const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+const MERCADO_PAGO_URL = "https://mpago.la/2CtjwX3";
 
-async const SUPABASE_URL = "https://akdyhrevykvmrqnzxvht.supabase.co";
-const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFrZHlocmV2eWt2bXJxbnp4dmh0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODcyNTk2MTUsImV4cCI6MjEwMjgzNTYxNX0.hyhnGdXwE27-ys0UbL8OHMVvmHjfp1HJ5A0-EFhy8lI";
-const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
-
-async function prepareEnrollment(event){
+async function prepareEnrollment(event) {
   event.preventDefault();
 
-  const form = document.getElementById('enrollmentForm');
-  const button = form.querySelector('button[type="submit"]');
-  const paymentBox = document.getElementById('paymentBox');
-  const paymentButton = paymentBox.querySelector('a');
+  const form = document.getElementById("enrollmentForm");
+  const button = form ? form.querySelector('button[type="submit"]') : null;
+  const paymentBox = document.getElementById("paymentBox");
+  const paymentButton = paymentBox ? paymentBox.querySelector("a") : null;
 
-  button.disabled = true;
-  button.textContent = 'Preparando inscripción...';
+  if (button) {
+    button.disabled = true;
+    button.textContent = "Guardando inscripción...";
+  }
 
   const data = new FormData(form);
-
   const payload = {
-    nombre_apellido: data.get('nombre'),
-    edad: data.get('edad') ? Number(data.get('edad')) : null,
-    whatsapp: data.get('telefono'),
-    email: data.get('email'),
-    nivel: data.get('nivel'),
-    equipo: data.get('equipo'),
-    software: data.get('software') || null,
-    objetivo: data.get('objetivo'),
-    experiencia: data.get('experienciaElectronica'),
-    disponibilidad: 'Sábados al mediodía',
-    expectativas: data.get('expectativa'),
-    como_conocio: data.get('comoConocio'),
-    situacion_actual: data.get('situacion'),
-    disponibilidad_confirmada: data.get('confirmacion') === 'Sí, confirmo'
+    nombre_apellido: data.get("nombre") || "",
+    edad: data.get("edad") ? Number(data.get("edad")) : null,
+    whatsapp: data.get("telefono") || "",
+    email: data.get("email") || "",
+    monto: 9000,
+    moneda: "UYU",
+    estado_pago: "pendiente"
   };
 
-  // The backend handles both the database insertion and Mercado Pago checkout.
-  const { data: authData, error: authError } =
-    await supabaseClient.auth.signInAnonymously();
+  const { error } = await supabaseClient
+    .from("inscripciones")
+    .insert([payload]);
 
-  if (authError || !authData?.session?.access_token) {
-    console.error(authError);
-    button.disabled = false;
-    button.textContent = 'Enviar inscripción';
-    alert('No pudimos iniciar la inscripción. Por favor intentá nuevamente.');
+  if (error) {
+    console.error("Error guardando inscripción:", error);
+    if (button) {
+      button.disabled = false;
+      button.textContent = "Enviar inscripción";
+    }
+    alert("No pudimos guardar tu inscripción. Por favor intentá nuevamente.");
     return false;
   }
 
-  button.textContent = 'Guardando inscripción...';
+  if (paymentBox) {
+    paymentBox.style.display = "block";
 
-  const { data: payment, error: paymentError } =
-    await supabaseClient.functions.invoke('create-dj-payment', {
-      body: { inscription: payload }
-    });
+    const strong = paymentBox.querySelector("strong");
+    const paragraphs = paymentBox.querySelectorAll("p");
 
-  if (paymentError || !payment?.checkout_url) {
-    console.error(paymentError || payment);
-    button.disabled = false;
-    button.textContent = 'Enviar inscripción';
-    alert('No pudimos guardar tu inscripción o preparar el pago. Por favor intentá nuevamente.');
-    return false;
+    if (strong) strong.textContent = "¡Inscripción recibida!";
+    if (paragraphs[0]) {
+      paragraphs[0].textContent =
+        "Tus datos quedaron registrados. Ahora podés realizar el pago de $9.000 UYU para reservar tu lugar.";
+    }
+    if (paragraphs[paragraphs.length - 1]) {
+      paragraphs[paragraphs.length - 1].textContent =
+        "Podés pagar con tarjeta y hasta en 12 cuotas, según las condiciones disponibles de Mercado Pago.";
+    }
+
+    if (paymentButton) {
+      paymentButton.href = MERCADO_PAGO_URL;
+      paymentButton.target = "_blank";
+      paymentButton.rel = "noopener";
+      paymentButton.textContent = "Pagar $9.000 con Mercado Pago";
+    }
+
+    paymentBox.scrollIntoView({ behavior: "smooth", block: "center" });
   }
 
-  paymentBox.style.display = 'block';
-  paymentBox.querySelector('strong').textContent = '¡Inscripción recibida!';
-  paymentBox.querySelector('p').textContent =
-    'Tus datos quedaron registrados. Ahora podés realizar el pago de $9.000 UYU para reservar tu lugar.';
-
-  paymentButton.href = payment.checkout_url;
-  paymentButton.target = '_blank';
-  paymentButton.rel = 'noopener';
-  paymentButton.textContent = 'Pagar $9.000 con Mercado Pago';
-
-  const paymentNote = paymentBox.querySelector('p:last-child');
-  if (paymentNote) {
-    paymentNote.textContent =
-      'El pago se procesa de forma segura mediante Mercado Pago. Podés pagar con tarjeta y hasta en 12 cuotas, según las condiciones disponibles.';
+  if (button) {
+    button.textContent = "Inscripción guardada ✓";
   }
-
-  button.textContent = 'Inscripción guardada ✓';
-  paymentBox.scrollIntoView({behavior:'smooth', block:'center'});
 
   return false;
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("enrollmentForm");
+  if (form) form.addEventListener("submit", prepareEnrollment);
+});
 </script>
 </body>
 </html>
