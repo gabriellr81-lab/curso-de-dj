@@ -275,7 +275,7 @@ async function prepareEnrollment(event){
   const paymentButton = paymentBox.querySelector('a');
 
   button.disabled = true;
-  button.textContent = 'Guardando inscripción...';
+  button.textContent = 'Preparando inscripción...';
 
   const data = new FormData(form);
 
@@ -293,28 +293,10 @@ async function prepareEnrollment(event){
     expectativas: data.get('expectativa'),
     como_conocio: data.get('comoConocio'),
     situacion_actual: data.get('situacion'),
-    disponibilidad_confirmada: data.get('confirmacion') === 'Sí, confirmo',
-    monto: 9000,
-    moneda: 'UYU',
-    estado_pago: 'pendiente'
+    disponibilidad_confirmada: data.get('confirmacion') === 'Sí, confirmo'
   };
 
-  const { data: inserted, error } = await supabaseClient
-    .from('inscripciones')
-    .insert(payload)
-    .select('id')
-    .single();
-
-  if (error) {
-    console.error(error);
-    button.disabled = false;
-    button.textContent = 'Enviar inscripción';
-    alert('No pudimos guardar tu inscripción. Por favor intentá nuevamente.');
-    return false;
-  }
-
-  button.textContent = 'Preparando pago...';
-
+  // The backend handles both the database insertion and Mercado Pago checkout.
   const { data: authData, error: authError } =
     await supabaseClient.auth.signInAnonymously();
 
@@ -322,20 +304,22 @@ async function prepareEnrollment(event){
     console.error(authError);
     button.disabled = false;
     button.textContent = 'Enviar inscripción';
-    alert('La inscripción se guardó, pero no pudimos preparar el pago. Escribinos por WhatsApp para continuar.');
+    alert('No pudimos iniciar la inscripción. Por favor intentá nuevamente.');
     return false;
   }
 
+  button.textContent = 'Guardando inscripción...';
+
   const { data: payment, error: paymentError } =
     await supabaseClient.functions.invoke('create-dj-payment', {
-      body: { inscription_id: inserted.id }
+      body: { inscription: payload }
     });
 
   if (paymentError || !payment?.checkout_url) {
     console.error(paymentError || payment);
     button.disabled = false;
     button.textContent = 'Enviar inscripción';
-    alert('La inscripción se guardó, pero no pudimos preparar el pago. Por favor intentá nuevamente.');
+    alert('No pudimos guardar tu inscripción o preparar el pago. Por favor intentá nuevamente.');
     return false;
   }
 
@@ -346,6 +330,7 @@ async function prepareEnrollment(event){
 
   paymentButton.href = payment.checkout_url;
   paymentButton.target = '_blank';
+  paymentButton.rel = 'noopener';
   paymentButton.textContent = 'Pagar $9.000 con Mercado Pago';
 
   const paymentNote = paymentBox.querySelector('p:last-child');
