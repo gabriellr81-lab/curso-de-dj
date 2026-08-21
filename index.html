@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Curso de DJ | Música Electrónica</title>
+<meta name="description" content="Aprendé a mezclar música electrónica desde cero. Curso presencial de DJ, 8 clases, grupos reducidos.">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,Arial,sans-serif;background:#090909;color:#f5f5f5;line-height:1.6}
+a{text-decoration:none;color:inherit}
+.container{width:min(1120px,92%);margin:auto}
+nav{position:fixed;top:0;width:100%;z-index:10;background:rgba(9,9,9,.78);backdrop-filter:blur(14px);border-bottom:1px solid #202020}
+.navin{height:72px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-weight:800;letter-spacing:-.5px}
+.navlinks{display:flex;gap:28px;font-size:14px;color:#aaa}
+.navlinks a:hover{color:#fff}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 24px;border-radius:8px;background:#fff;color:#090909;font-weight:700;border:1px solid #fff;transition:.2s}
+.btn:hover{transform:translateY(-2px);background:#ddd}
+.btn.ghost{background:transparent;color:#fff;border-color:#444}
+.hero{min-height:760px;display:flex;align-items:center;padding:130px 0 90px;background:radial-gradient(circle at 75% 25%,#252525 0,transparent 34%),linear-gradient(135deg,#090909 0%,#111 55%,#080808 100%)}
+.eyebrow{text-transform:uppercase;letter-spacing:3px;font-size:12px;color:#aaa;margin-bottom:20px}
+h1{font-size:clamp(48px,7vw,88px);line-height:.98;letter-spacing:-4px;max-width:850px}
+.hero p{font-size:20px;color:#b8b8b8;max-width:650px;margin:28px 0 36px}
+.actions{display:flex;gap:12px;flex-wrap:wrap}
+section{padding:100px 0;border-top:1px solid #1d1d1d}
+.sectionhead{max-width:700px;margin-bottom:48px}
+.sectionhead h2{font-size:42px;letter-spacing:-2px;line-height:1.1;margin-bottom:14px}
+.sectionhead p{color:#999}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{padding:28px;border:1px solid #252525;background:#101010;border-radius:12px}
+.card h3{font-size:18px;margin-bottom:9px}
+.card p{color:#999;font-size:14px}
+.numbers{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#282828;border:1px solid #282828}
+.number{background:#0d0d0d;padding:28px}
+.number strong{display:block;font-size:30px;margin-bottom:5px}
+.number span{font-size:13px;color:#999}
+.list{display:grid;grid-template-columns:1fr 1fr;gap:14px 50px}
+.list div{padding:14px 0;border-bottom:1px solid #252525;color:#ccc}
+.list div::before{content:"— ";color:#777}
+.faq{max-width:820px}
+details{border-top:1px solid #292929;padding:20px 0}
+details:last-child{border-bottom:1px solid #292929}
+summary{cursor:pointer;font-weight:600}
+details p{color:#999;padding-top:12px}
+.cta{background:#f5f5f5;color:#090909;border-radius:16px;padding:65px}
+.cta h2{font-size:48px;letter-spacing:-2px;line-height:1.05;max-width:700px}
+.cta p{color:#555;margin:18px 0 28px;max-width:620px}
+footer{padding:35px 0;color:#777;font-size:13px}
+@media(max-width:800px){
+.navlinks{display:none}.hero{min-height:700px}.grid,.numbers{grid-template-columns:1fr 1fr}.list{grid-template-columns:1fr}
+.sectionhead h2{font-size:34px}.cta{padding:38px}.cta h2{font-size:36px}
+}
+@media(max-width:520px){.grid,.numbers{grid-template-columns:1fr}h1{letter-spacing:-2px}.hero p{font-size:17px}}
+</style>
+</head>
+<body>
+<nav><div class="container navin">
+<div class="logo">CURSO DE DJ</div>
+<div class="navlinks"><a href="#curso">El curso</a><a href="#aprendes">Qué aprendés</a><a href="#incluye">Precio</a><a href="#faq">Preguntas</a><a href="#inscripcion">Inscripción</a></div>
+<a class="btn" href="#inscripcion">Inscribirme</a>
+</div></nav>
+
+<header class="hero">
+<div class="container">
+<div class="eyebrow">Curso presencial · Música electrónica</div>
+<h1>Aprendé a mezclar desde cero.</h1>
+<p>Un curso práctico para aprender las bases del DJing, dominar tu controlador y empezar a construir tus propios sets de música electrónica.</p>
+<div class="actions">
+<a class="btn" href="#inscripcion">Quiero inscribirme</a>
+<a class="btn ghost" href="#curso">Conocer el curso</a>
+</div>
+</div>
+</header>
+
+<section id="curso"><div class="container">
+<div class="sectionhead"><div class="eyebrow">Cómo funciona</div><h2>Aprendé practicando.</h2><p>Empezamos desde los conceptos fundamentales y avanzamos progresivamente hasta que puedas realizar tus propias mezclas.</p></div>
+<div class="numbers">
+<div class="number"><strong>8</strong><span>Clases</span></div>
+<div class="number"><strong>Sábados</strong><span>Al mediodía</span></div>
+<div class="number"><strong>1:30 h</strong><span>Por clase</span></div>
+<div class="number"><strong>3 máx.</strong><span>Alumnos por grupo</span></div>
+</div>
+</div></section>
+
+<section id="aprendes"><div class="container">
+<div class="sectionhead"><div class="eyebrow">Contenido</div><h2>Las herramientas que necesitás para empezar.</h2></div>
+<div class="grid">
+<div class="card"><h3>Beatmatching</h3><p>Aprendé a sincronizar canciones y mantener una mezcla estable.</p></div>
+<div class="card"><h3>Estructura musical</h3><p>Entendé beats, compases y frases para saber cuándo mezclar.</p></div>
+<div class="card"><h3>Transiciones</h3><p>Construí mezclas fluidas utilizando técnicas y ecualización.</p></div>
+<div class="card"><h3>BPM y sincronización</h3><p>Comprendé el tempo y aprendé a utilizarlo a tu favor.</p></div>
+<div class="card"><h3>EQ, filtros y efectos</h3><p>Conocé las herramientas esenciales para darle movimiento a tus mezclas.</p></div>
+<div class="card"><h3>Construcción de sets</h3><p>Aprendé a seleccionar, ordenar y preparar música para un DJ set.</p></div>
+</div>
+</div></section>
+
+<section id="incluye"><div class="container">
+<div class="sectionhead"><div class="eyebrow">Inversión</div><h2>Todo el curso por $9.000 UYU.</h2><p>Un único pago por las 8 clases. No hay que pagar clase a clase.</p><p style="margin-top:12px;font-weight:600;color:#f5f5f5">💳 Podés abonar con cualquier tarjeta hasta en 12 cuotas sin intereses.</p></div>
+<div class="grid">
+<div class="card"><h3>8 clases presenciales</h3><p>Una clase por semana, de 1 hora y 30 minutos.</p></div>
+<div class="card"><h3>Equipamiento disponible</h3><p>Vas a poder trabajar con el controlador durante las clases sin necesidad de tener uno propio.</p></div>
+<div class="card"><h3>Grupos reducidos</h3><p>Máximo 3 alumnos por grupo para que tengas tiempo real de práctica y corrección.</p></div>
+<div class="card"><h3>Material de aprendizaje</h3><p>Conceptos, técnicas y herramientas para que puedas continuar practicando fuera de clase.</p></div>
+<div class="card"><h3>Práctica guiada</h3><p>Aprendé haciendo: mezclas, transiciones, beatmatching, EQ, loops y preparación de sets.</p></div>
+<div class="card"><h3>Orientación personalizada</h3><p>Correcciones y acompañamiento durante el proceso de aprendizaje.</p></div>
+</div>
+<div style="margin-top:32px">
+<a class="btn" href="#inscripcion">Reservar mi lugar</a>
+</div>
+</div></section>
+
+<section><div class="container">
+<div class="sectionhead"><div class="eyebrow">Nivel básico</div><h2>Un curso pensado para empezar desde cero.</h2><p>El curso es de nivel básico y está pensado especialmente para principiantes. No es necesario tener un controlador propio: el equipamiento estará disponible durante las clases.</p></div>
+<div class="list">
+<div>Personas que nunca utilizaron un equipo DJ</div>
+<div>Principiantes que quieren aprender correctamente</div>
+<div>Quienes practican por su cuenta y quieren mejorar</div>
+<div>Personas que quieren empezar a realizar sus propios sets</div>
+</div>
+</div></section>
+
+<section id="faq"><div class="container">
+<div class="sectionhead"><div class="eyebrow">Preguntas frecuentes</div><h2>Antes de empezar.</h2></div>
+<div class="faq">
+<details><summary>¿Cuál es el nivel del curso?</summary><p>El curso es de nivel básico. Está pensado para personas que quieren aprender DJing desde cero y avanzar progresivamente.</p></details>
+<details><summary>¿Necesito tener un controlador DJ?</summary><p>No. El equipamiento necesario estará disponible durante las clases.</p></details>
+<details><summary>¿Qué música se utiliza?</summary><p>El curso está enfocado en música electrónica, ideal para trabajar progresivamente las principales técnicas de mezcla.</p></details>
+<details><summary>¿Cuántas personas hay por grupo?</summary><p>Los grupos tienen un máximo de 3 alumnos para que cada persona tenga tiempo suficiente de práctica y corrección.</p></details>
+<details><summary>¿Dónde se realiza?</summary><p>Las clases son presenciales en Montevideo y se realizan los sábados al mediodía. La ubicación exacta se coordina al confirmar la inscripción.</p></details>
+</div>
+</div></section>
+
+<section id="inscripcion"><div class="container">
+<div class="cta">
+<div class="eyebrow">Inscripción</div>
+<h2>Reservá tu lugar por $9.000 UYU.</h2>
+<p>Para inscribirte, completá tus datos y luego realizá el pago del curso. Una vez confirmado el pago, coordinamos tu horario y grupo.</p><p style="font-weight:600;color:#333;margin-top:10px">Podés pagar con cualquier tarjeta hasta en 12 cuotas sin intereses.</p>
+
+<form id="enrollmentForm" style="margin-top:28px;display:grid;gap:14px;max-width:760px" onsubmit="return prepareEnrollment(event)">
+<input required name="nombre" placeholder="Nombre y apellido" style="padding:15px;border:1px solid #ccc;border-radius:7px;font:inherit">
+<input required name="edad" type="number" min="10" placeholder="Edad" style="padding:15px;border:1px solid #ccc;border-radius:7px;font:inherit">
+<input required name="telefono" placeholder="Número de teléfono / WhatsApp" style="padding:15px;border:1px solid #ccc;border-radius:7px;font:inherit">
+<input required name="email" type="email" placeholder="Correo electrónico" style="padding:15px;border:1px solid #ccc;border-radius:7px;font:inherit">
+
+<select required name="nivel" style="padding:15px;border:1px solid #ccc;border-radius:7px;font:inherit;background:#fff">
+<option value="">Nivel actual como DJ</option>
+<option>Nunca utilicé un equipo de DJ</option>
+<option>Soy principiante y tengo algunos conocimientos</option>
+<option>Practico por mi cuenta</option>
+<option>Ya realizo algunas mezclas y quiero mejorar</option>
+<option>Tengo experiencia como DJ</option>
+</select>
+
+<select required name="equipo" style="padding:15px;border:1px solid #ccc;border-radius:7px;font:inherit;background:#fff">
+<option value="">¿Tenés equipo de DJ?</option>
+<option>No tengo equipo</option>
+<option>Tengo un controlador DJ</option>
+<option>Tengo CDJ y mixer</option>
+<option>Tengo otro tipo de equipo</option>
+</select>
+
+<input name="software" placeholder="¿Qué equipo o software utilizás actualmente? (opcional)" style="padding:15px;border:1px solid #ccc;border-radius:7px;font:inherit">
+
+<textarea required name="objetivo" rows="3" placeholder="¿Cuál es tu principal objetivo al realizar el curso?" style="padding:15px;border:1px solid #ccc;border-radius:7px;font:inherit"></textarea>
+
+<select required name="experienciaElectronica" style="padding:15px;border:1px solid #ccc;border-radius:7px;font:inherit;background:#fff">
+<option value="">¿Tenés experiencia previa con música electrónica?</option>
+<option>No</option>
+<option>Escucho música electrónica pero nunca la mezclé</option>
+<option>He intentado realizar algunas mezclas</option>
+<option>Practico habitualmente</option>
+<option>Ya realizo DJ sets</option>
+</select>
+
+<div style="padding:18px;border:1px solid #ccc;border-radius:7px;background:#f7f7f7;color:#333">
+<strong style="display:block;margin-bottom:5px">Horario del curso</strong>
+Sábados al mediodía.
+</div>
+<textarea required name="expectativa" rows="3" placeholder="¿Qué te gustaría poder hacer al finalizar el curso?" style="padding:15px;border:1px solid #ccc;border-radius:7px;font:inherit"></textarea>
+
+<select required name="comoConocio" style="padding:15px;border:1px solid #ccc;border-radius:7px;font:inherit;background:#fff">
+<option value="">¿Cómo conociste el curso?</option>
+<option>Instagram</option>
+<option>TikTok</option>
+<option>WhatsApp</option>
+<option>Recomendación</option>
+<option>Otro</option>
+</select>
+
+<textarea name="consulta" rows="3" placeholder="¿Hay algo que quieras consultar o contarnos? (opcional)" style="padding:15px;border:1px solid #ccc;border-radius:7px;font:inherit"></textarea>
+
+<select required name="situacion" style="padding:15px;border:1px solid #ccc;border-radius:7px;font:inherit;background:#fff">
+<option value="">¿Cuál es tu situación actualmente?</option>
+<option>Quiero comenzar el curso</option>
+<option>Estoy interesado/a y quiero recibir más información</option>
+<option>Quiero consultar los horarios disponibles</option>
+<option>Todavía estoy evaluando la posibilidad</option>
+</select>
+
+<select required name="confirmacion" style="padding:15px;border:1px solid #ccc;border-radius:7px;font:inherit;background:#fff">
+<option value="">Disponibilidad para realizar 8 clases</option>
+<option>Sí, confirmo</option>
+<option>Necesito consultar mi disponibilidad</option>
+</select>
+
+<button class="btn" type="submit" style="cursor:pointer">Enviar inscripción</button>
+</form>
+
+<div id="paymentBox" style="display:none;margin-top:24px;padding:24px;background:#e9e9e9;border-radius:10px">
+<strong style="display:block;font-size:18px">Datos recibidos correctamente.</strong>
+<p style="color:#555;margin:8px 0 18px">El siguiente paso es realizar el pago de $9.000 UYU para reservar tu lugar.</p>
+<a class="btn" href="https://www.mercadopago.com.uy/" target="_blank">Pagar con Mercado Pago</a>
+<p style="font-size:12px;color:#777;margin-top:12px">El pago se procesa de forma segura mediante Mercado Pago.</p>
+</div>
+
+<p style="font-size:12px;color:#777;margin-top:16px">Tus datos se almacenan de forma segura en nuestro sistema de inscripción. El pago se realiza a continuación mediante Mercado Pago.</p>
+</div>
+</div></section>
+
+
+<a class="whatsapp-chat" href="https://wa.me/59898391887?text=Hola!%20Quiero%20consultar%20sobre%20el%20curso%20de%20DJ." target="_blank" rel="noopener" aria-label="Consultar por WhatsApp">
+  <span class="whatsapp-icon">◔</span>
+  <span>¿Tenés alguna consulta? <strong>Escribime por WhatsApp</strong></span>
+</a>
+<style>
+.whatsapp-chat{
+  position:fixed;
+  right:22px;
+  bottom:22px;
+  z-index:20;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  max-width:320px;
+  padding:13px 17px;
+  border-radius:999px;
+  background:#25D366;
+  color:#fff;
+  box-shadow:0 8px 30px rgba(0,0,0,.35);
+  font-size:13px;
+  line-height:1.25;
+}
+.whatsapp-chat:hover{transform:translateY(-2px);background:#20bd5b}
+.whatsapp-icon{
+  width:30px;height:30px;border-radius:50%;
+  background:#fff;color:#25D366;
+  display:flex;align-items:center;justify-content:center;
+  font-size:20px;font-weight:800;flex:none;
+}
+@media(max-width:520px){
+  .whatsapp-chat{right:14px;bottom:14px;max-width:calc(100% - 28px);font-size:12px}
+}
+</style>
+
+<footer><div class="container">Curso de DJ · Música electrónica · Montevideo</div></footer>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+const SUPABASE_URL = "https://akdyhrevykvmrqnzxvht.supabase.co";
+const SUPABASE_KEY = "sb_publishable_QsH9k0dQSEMGpB9mCNqfug_M7nhHfj-";
+const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+async const SUPABASE_URL = "https://akdyhrevykvmrqnzxvht.supabase.co";
+const SUPABASE_KEY = "sb_publishable_QsH9k0dQSEMGpB9mCNqfug_M7nhHfj-";
+const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+async function prepareEnrollment(event){
+  event.preventDefault();
+
+  const form = document.getElementById('enrollmentForm');
+  const button = form.querySelector('button[type="submit"]');
+  const paymentBox = document.getElementById('paymentBox');
+  const paymentButton = paymentBox.querySelector('a');
+
+  button.disabled = true;
+  button.textContent = 'Guardando inscripción...';
+
+  const data = new FormData(form);
+
+  const payload = {
+    nombre_apellido: data.get('nombre'),
+    edad: data.get('edad') ? Number(data.get('edad')) : null,
+    whatsapp: data.get('telefono'),
+    email: data.get('email'),
+    nivel: data.get('nivel'),
+    equipo: data.get('equipo'),
+    software: data.get('software') || null,
+    objetivo: data.get('objetivo'),
+    experiencia: data.get('experienciaElectronica'),
+    disponibilidad: 'Sábados al mediodía',
+    expectativas: data.get('expectativa'),
+    como_conocio: data.get('comoConocio'),
+    situacion_actual: data.get('situacion'),
+    disponibilidad_confirmada: data.get('confirmacion') === 'Sí, confirmo',
+    monto: 9000,
+    moneda: 'UYU',
+    estado_pago: 'pendiente'
+  };
+
+  const { data: inserted, error } = await supabaseClient
+    .from('inscripciones')
+    .insert(payload)
+    .select('id')
+    .single();
+
+  if (error) {
+    console.error(error);
+    button.disabled = false;
+    button.textContent = 'Enviar inscripción';
+    alert('No pudimos guardar tu inscripción. Por favor intentá nuevamente.');
+    return false;
+  }
+
+  button.textContent = 'Preparando pago...';
+
+  const { data: authData, error: authError } =
+    await supabaseClient.auth.signInAnonymously();
+
+  if (authError || !authData?.session?.access_token) {
+    console.error(authError);
+    button.disabled = false;
+    button.textContent = 'Enviar inscripción';
+    alert('La inscripción se guardó, pero no pudimos preparar el pago. Escribinos por WhatsApp para continuar.');
+    return false;
+  }
+
+  const { data: payment, error: paymentError } =
+    await supabaseClient.functions.invoke('create-dj-payment', {
+      body: { inscription_id: inserted.id }
+    });
+
+  if (paymentError || !payment?.checkout_url) {
+    console.error(paymentError || payment);
+    button.disabled = false;
+    button.textContent = 'Enviar inscripción';
+    alert('La inscripción se guardó, pero no pudimos preparar el pago. Por favor intentá nuevamente.');
+    return false;
+  }
+
+  paymentBox.style.display = 'block';
+  paymentBox.querySelector('strong').textContent = '¡Inscripción recibida!';
+  paymentBox.querySelector('p').textContent =
+    'Tus datos quedaron registrados. Ahora podés realizar el pago de $9.000 UYU para reservar tu lugar.';
+
+  paymentButton.href = payment.checkout_url;
+  paymentButton.target = '_blank';
+  paymentButton.textContent = 'Pagar $9.000 con Mercado Pago';
+
+  const paymentNote = paymentBox.querySelector('p:last-child');
+  if (paymentNote) {
+    paymentNote.textContent =
+      'El pago se procesa de forma segura mediante Mercado Pago. Podés pagar con tarjeta y hasta en 12 cuotas, según las condiciones disponibles.';
+  }
+
+  button.textContent = 'Inscripción guardada ✓';
+  paymentBox.scrollIntoView({behavior:'smooth', block:'center'});
+
+  return false;
+}
+</script>
+</body>
+</html>
